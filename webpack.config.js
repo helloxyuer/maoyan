@@ -40,12 +40,21 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    noInfo: true
+    noInfo: true,
+    port: 8081,
+    host: 'localhost',
+    proxy: {
+        '/movie': {
+            target: 'http://m.maoyan.com',
+            pathRewrite: {'^/movie':'/movie'},
+            changeOrigin: true
+        }
+    }
   },
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
 }
 
 if (process.env.NODE_ENV === 'production') {

@@ -1,7 +1,21 @@
 <template>
     <div>
-        <div></div>
-
+        <div v-for="x in movielist" class="clearFloat movie_box">
+            <div class="movie_post">
+                <img :src="x.img" alt="">
+            </div>
+            <div class="movie_info" @click="goToDetails(x)">
+                <div>
+                    <span>{{x.nm}}</span>
+                    <span class="movie_3d" >3D</span>
+                    <span v-if="x.imax" class="movie_imax">imax</span>
+                </div>
+                <div v-if="!x.preSale">观众{{x.sc}}</div>
+                <div v-if="x.preSale">{{x.wish}}想看</div>
+                <div>{{x.scm}}</div>
+                <div>{{x.showInfo}}</div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -16,13 +30,53 @@
         },
         created:function () {
             console.log('movieCcompentCreated');
-            axios.get('http://localhost:8080/movie/list.json?type=hot&offset=0&limit=1000').then((res) => {
-                console.log(res.data.seller);
-                this.movielist = res.data.seller
+            axios.get('/movie/list.json?type=hot&offset=0&limit=1000').then((res) => {
+                console.log(JSON.parse(res.request.response));
+                this.movielist = JSON.parse(res.request.response).data.movies;
             })
         },
-        methods:function () {
-            
+        methods:{
+            goToDetails:function(x){
+                axios.get('/movie/'+x.id+'.json').then((res) => {
+                    console.log(JSON.parse(res.request.response));
+                })
+            }
         }
     }
 </script>
+
+<style>
+    .movie_3d{
+        background: #b4ccc4;
+        color: #ffffff;
+        border-radius: 3px;
+        padding: 2px 5px;
+    }
+
+    .movie_imax{
+        background: #b4ccc4;
+        color: #ffffff;
+        border-radius: 3px;
+        padding: 2px 5px;
+    }
+    .movie_post{
+        width: 100px;
+        float: left;
+    }
+    .movie_box{
+        border-bottom: 1px solid #cccccc;
+        margin: 5px;
+    }
+    .movie_post img{
+        width: 100%;
+    }
+    .movie_info{
+        width: calc(100% - 110px);
+        margin-left: 110px;
+    }
+    .clearFloat:after{
+        display: block;
+        content: '';
+        clear: both;;
+    }
+</style>
