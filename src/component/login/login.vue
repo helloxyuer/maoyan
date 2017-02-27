@@ -25,7 +25,7 @@
         methods: {
             telLogin: function () {
                 if(this.loginTel=='11'&&this.password=="22"){
-                    router.push('/main')
+                    this.$router.replace('/main')
                 }else{
                     this.tips='账号11,密码22';
                 }

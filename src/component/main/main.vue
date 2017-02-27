@@ -13,9 +13,16 @@
 </template>
 <style>
     .nav{
-        height: 30px;
-        line-height: 30px;
-        border:1px solid black;
+        position: absolute;
+        bottom:0;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        border-top: 1px solid #ccc;
         display:flex;
+    }
+    .nav span{
+        width: 25%;
+        text-align: center;
     }
 </style>

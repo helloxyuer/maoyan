@@ -23,9 +23,7 @@ module.exports = {
             component:movie,
             beforeEnter: (to, from, next) => {
                 console.log('12');
-                setTimeout(function () {
-                    next();
-                },1000)
+                next();
             }
         },{
             path:'cinema',
