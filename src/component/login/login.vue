@@ -17,6 +17,8 @@
 </template>
 
 <script>
+    import style from '../../css/common.css';
+
     export default {
         data:function () {
             return{
