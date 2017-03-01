@@ -41,9 +41,8 @@
                 const count={},word = this.mykeyword;
                 for(let x in this.cinemalist){
                     count[x]= this.cinemalist[x].filter(function (data) {
-                        console.log(data);
                         if(word){
-                            if(data.index0f(word)!=-1){
+                            if(data.nm.toString().indexOf(word)>1){
                                 return data
                             }
                         }else{
