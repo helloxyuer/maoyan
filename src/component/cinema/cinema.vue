@@ -42,7 +42,7 @@
                 for(let x in this.cinemalist){
                     count[x]= this.cinemalist[x].filter(function (data) {
                         if(word){
-                            if(data.nm.toString().indexOf(word)>1){
+                            if(data.nm.toString().indexOf(word)!=-1){
                                 return data
                             }
                         }else{
