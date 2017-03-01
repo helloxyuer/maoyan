@@ -1,5 +1,8 @@
 <template>
     <div class="login-bg">
+        <div class="login-header">
+
+        </div>
         <div class="text-center">
             <span>电话:</span>
             <input type="text" v-model="loginTel" maxlength="11">
@@ -42,6 +45,9 @@
 </script>
 
 <style>
+    .login-header{
+        height: 200px;
+    }
     .text-center{
         text-align: center;
     }

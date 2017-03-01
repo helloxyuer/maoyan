@@ -1,5 +1,6 @@
 <template>
     <div>
+        <movie-search-bar></movie-search-bar>
         <div v-for="x in movielist" class="clearFloat movie_box">
             <div class="movie_post">
                 <img :src="x.img" alt="">
@@ -21,6 +22,7 @@
 
 <script>
     import axios from 'axios';
+    import movieSearchBar from '../../component/bar/movieSearchBar.vue';
 
     export default {
         data () {
@@ -29,16 +31,18 @@
             }
         },
         created:function () {
-            console.log('movieCcompentCreated');
             axios.get('/movie/list.json?type=hot&offset=0&limit=1000').then((res) => {
-                console.log(JSON.parse(res.request.response));
                 this.movielist = JSON.parse(res.request.response).data.movies;
             })
         },
+        components:{
+            'movie-search-bar':movieSearchBar
+        },
         methods:{
             goToDetails:function(x){
-                axios.get('/movie/'+x.id+'.json').then((res) => {
-                    console.log(JSON.parse(res.request.response));
+                this.$router.push({
+                    name:'details',
+                    params:{'movieid': x.id}
                 })
             }
         }

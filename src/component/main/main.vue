@@ -18,7 +18,8 @@
         width: 100%;
         height: 40px;
         line-height: 40px;
-        background: #fffadd;
+        background: #20A0FF;
+        border-bottom:1px solid #20A0FF;
         border-top: 1px solid #ccc;
         display:flex;
     }

@@ -18,6 +18,9 @@ export default {
     margin: 0;
     padding: 0;
   }
+  .active{
+    color: #91d6ff;
+  }
   .text-center{
     text-align: left;
   }

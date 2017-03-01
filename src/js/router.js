@@ -4,7 +4,7 @@ import cinema from '../component/cinema/cinema.vue'
 import find from '../component/find/find.vue'
 import my from '../component/my/my.vue'
 import movie from '../component/movie/movie.vue'
-
+import details from '../component/details/details.vue'
 module.exports = {
     routes: [{
         path: '/',
@@ -35,6 +35,10 @@ module.exports = {
             path:'my',
             component:my,
         }]
+    },{
+        path: '/details/:movieid',
+        name:'details',
+        component: details
     }],
     linkActiveClass: 'active'
 }
