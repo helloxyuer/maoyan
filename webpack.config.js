@@ -33,7 +33,7 @@ module.exports = {
         }
       },{
         test: /\.css$/,
-        loader: "style-loader!css-loader?modules!postcss-loader"
+        loader: "style-loader!css-loader?modules"
       }
     ]
   },
@@ -63,9 +63,6 @@ module.exports = {
   performance: {
     hints: false
   },
-  postcss: [
-    values
-  ],
   devtool: '#eval-source-map',
 }
 

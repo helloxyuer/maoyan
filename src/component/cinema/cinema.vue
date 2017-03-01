@@ -1,6 +1,8 @@
 <template>
     <div>
-        <div v-for="(val,key) of cinemalist">
+        <cinema-bar v-on:keyword="getKeyword"></cinema-bar>
+        <div></div>
+        <div v-for="(val,key) of cinemalistfiflter">
             <div class="cinemaZone">{{key}}</div>
             <div class="cinemaList" v-for="(item, index) of val">
                 <span class="cinemaIndex">{{index}}</span>
@@ -12,30 +14,46 @@
 
 <script>
     import axios from 'axios';
+    import cinemaSearchBar from '../../component/bar/cinemaSearchBar.vue';
 
     export default {
         data () {
             return {
-                cinemalist: []
+                cinemalist: '',
+                mykeyword:''
             }
         },
         created:function () {
             axios.get('/cinemas.json').then((res) => {
                 this.cinemalist = JSON.parse(res.request.response).data;
-                console.log(JSON.parse(res.request.response).data)
             })
         },
         components:{
-
+            'cinema-bar':cinemaSearchBar
         },
         methods:{
-            goToDetails:function(x){
-                this.$router.push({
-                    name:'details',
-                    params:{'movieid': x.id}
-                })
+            getKeyword:function(x){
+                this.mykeyword = x;
             }
-        }
+        },
+        computed:{
+            cinemalistfiflter: function () {
+                const count={},word = this.mykeyword;
+                for(let x in this.cinemalist){
+                    count[x]= this.cinemalist[x].filter(function (data) {
+                        console.log(data);
+                        if(word){
+                            if(data.index0f(word)!=-1){
+                                return data
+                            }
+                        }else{
+                            return data
+                        }
+                    })
+                }
+                return count;
+            }
+        },
     }
 </script>
 
