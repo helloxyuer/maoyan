@@ -9,9 +9,10 @@
             <router-link to="find" tag="span">发现</router-link>
             <router-link to="my" tag="span">我的</router-link>
         </nav>
+        <div class="nav-shardow"></div>
     </div>
 </template>
-<style>
+<style scoped>
     .nav{
         position: fixed;
         bottom:0;
@@ -22,6 +23,9 @@
         border-bottom:1px solid #20A0FF;
         border-top: 1px solid #ccc;
         display:flex;
+    }
+    .nav-shardow{
+        height: 40px;
     }
     .nav span{
         width: 25%;
