@@ -23,6 +23,7 @@
 <script>
     import axios from 'axios';
     import movieSearchBar from '../../component/bar/movieSearchBar.vue';
+    import style from '../../css/common.css';
 
     export default {
         data () {
@@ -41,7 +42,7 @@
         methods:{
             goToDetails:function(x){
                 this.$router.push({
-                    name:'details',
+                    name:'movieDetails',
                     params:{'movieid': x.id}
                 })
             }
@@ -77,10 +78,5 @@
     .movie_info{
         width: calc(100% - 110px);
         margin-left: 110px;
-    }
-    .clearFloat:after{
-        display: block;
-        content: '';
-        clear: both;;
     }
 </style>

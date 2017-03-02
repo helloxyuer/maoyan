@@ -5,6 +5,7 @@ import find from '../component/find/find.vue'
 import my from '../component/my/my.vue'
 import movie from '../component/movie/movie.vue'
 import details from '../component/details/details.vue'
+import cinemadetails from '../component/details/cinemadetails.vue'
 module.exports = {
     routes: [{
         path: '/',
@@ -36,9 +37,14 @@ module.exports = {
             component:my,
         }]
     },{
-        path: '/details/:movieid',
-        name:'details',
+        path: '/moveDetails/:movieid',
+        name:'movieDetails',
         component: details
+    },{
+        path: '/cinemaDetails/:cinemaid',
+        name:'cinemaDetails',
+        component: cinemadetails
+
     }],
     linkActiveClass: 'active'
 }

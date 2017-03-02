@@ -57,6 +57,11 @@ module.exports = {
           target: 'http://m.maoyan.com',
           pathRewrite: {'^/cinemas':'/cinemas'},
           changeOrigin: true
+        },
+        '/showtime':{
+          target: 'http://m.maoyan.com',
+          pathRewrite: {'^/showtime':'/showtime'},
+          changeOrigin: true
         }
     }
   },

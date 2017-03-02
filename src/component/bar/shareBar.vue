@@ -1,11 +1,16 @@
 <template>
-    <div class="shareBar">
-        <div class="shareBar_left" @click="goback">﹤</div>
-        <div class="shareBar_right" @click="sharePage">◪</div>
+    <div>
+        <div class="shareBar height40px">
+            <div class="shareBar_left" @click="goback">﹤</div>
+            <div class="shareBar_right" @click="sharePage">◪</div>
+        </div>
+        <div class="height40px"></div>
     </div>
 </template>
 
 <script>
+    import style from '../../css/common.css';
+
     export default {
         data:function () {
             return{
@@ -29,8 +34,9 @@
 
 <style>
     .shareBar{
-        height: 40px;
-        line-height: 40px;
+        position: fixed;
+        width: 100%;
+        background: #20A0FF;
     }
     .shareBar_left{
         font-size: 20px;

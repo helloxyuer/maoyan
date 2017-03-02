@@ -4,10 +4,10 @@
         <div></div>
         <div v-for="(val,key) of cinemalistfiflter">
             <div class="cinemaZone">{{key}}</div>
-            <div class="cinemaList" v-for="(item, index) of val">
+            <router-link class="cinemaList" v-for="(item, index) of val" :to="{name:'cinemaDetails',params:{cinemaid:item.id}}" tag="div">
                 <span class="cinemaIndex">{{index}}</span>
                 <span class="cinemaName">{{item.nm}}</span>
-            </div>
+            </router-link>
         </div>
     </div>
 </template>
@@ -65,6 +65,9 @@
     }
     .cinemaList{
         margin-left: 30px;
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 1px solid #b4ccc4;
     }
     .cinemaIndex{
         color: #ffffff;
