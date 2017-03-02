@@ -8,10 +8,10 @@
                 <span v-for="x in cinemaDetailModel.featureTags">{{x.tag}}</span>
             </div>
         </div>
-        <div class="onMoviesList">
-            <ul class="movieul clearFloat">
-                <li @click="resetCurMovie(index)" class="moviesli" v-for="(x, index) in movies"><img  :src="x.img" alt=""></li>
-            </ul>
+        <div class="onMoviesList" @touchedmove:native="move(e)">
+            <div class="movieul">
+                <div @click="resetCurMovie(index)" class="moviesli" v-for="(x, index) in movies"><img  :src="x.img" alt=""></div>
+            </div>
         </div>
     </div>
 </template>
@@ -34,6 +34,9 @@
         methods: {
             resetCurMovie:function (index) {
                 console.log(index);
+            },
+            move:function (e) {
+                console.log(e)
             }
         },
         components:{
@@ -85,27 +88,28 @@
         font-size: 10px;
     }
     .onMoviesList{
-        overflow-x: hidden;
+        overflow: scroll;
         background-color: rgba(0,0,0,0.8);
         height: 150px;
         width: 100%;
     }
+    .movieul{
+        margin: 0;
+        padding: 0;
+        margin-left: calc(50% - 45px);
+        margin-right: calc(50% - 45px);
+        white-space: nowrap;
+        height: 100%;
+    }
     .moviesli{
+        display: inline-block;
+        list-style: none;
         padding:10px;
         width: 91px;
         height: 130px;
-        float: left;
     }
     .moviesli img{
         height: 100%;
     }
-    .movieul{
-        margin: 0;
-        margin-left: calc(50% - 50px);
-        padding: 0;
-        width: 2000px;
-    }
-    li{
-        list-style: none;
-    }
+
 </style>
