@@ -4,8 +4,12 @@ import cinema from '../component/cinema/cinema.vue'
 import find from '../component/find/find.vue'
 import my from '../component/my/my.vue'
 import movie from '../component/movie/movie.vue'
+import Weather from '../component/weather/weather.vue'
+import Jocker from '../component/jocker/jocker.vue'
+import Today from '../component/today/today.vue'
 import details from '../component/details/details.vue'
 import cinemadetails from '../component/details/cinemadetails.vue'
+
 module.exports = {
     routes: [{
         path: '/',
@@ -32,6 +36,14 @@ module.exports = {
         },{
             path:'find',
             component:find,
+            children:[{
+                path: '/',
+                components: {
+                    default:Weather,
+                    today:Today,
+                    jocker:Jocker
+                }
+            }]
         },{
             path:'my',
             component:my,
