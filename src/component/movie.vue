@@ -1,22 +1,25 @@
 <template>
     <div class="movieList">
-        <movie-search-bar></movie-search-bar>
-        <div v-for="x in movielist" class="movie_box">
-            <div class="movie_post">
-                <img :src="x.img" alt="">
-            </div>
-            <div class="movie_info" @click="goToDetails(x)">
-                <div>
-                    <span>{{x.nm}}</span>
-                    <span class="movie_3d" >3D</span>
-                    <span v-if="x.imax" class="movie_imax">imax</span>
+        <movieSearchBar></movieSearchBar>
+        <div class="movieListBox">
+            <div v-for="x in movielist" class="movie_box clearFloat">
+                <div class="movie_post">
+                    <img :src="x.img" alt="">
                 </div>
-                <div v-if="!x.preSale">观众{{x.sc}}</div>
-                <div v-if="x.preSale">{{x.wish}}想看</div>
-                <div>{{x.scm}}</div>
-                <div>{{x.showInfo}}</div>
+                <div class="movie_info" @click="goToDetails(x)">
+                    <div>
+                        <span>{{x.nm}}</span>
+                        <span class="movie_3d" >3D</span>
+                        <span v-if="x.imax" class="movie_imax">imax</span>
+                    </div>
+                    <div v-if="!x.preSale">观众{{x.sc}}</div>
+                    <div v-if="x.preSale">{{x.wish}}想看</div>
+                    <div>{{x.scm}}</div>
+                    <div>{{x.showInfo}}</div>
+                </div>
             </div>
         </div>
+
     </div>
 </template>
 
@@ -37,7 +40,7 @@
             })
         },
         components:{
-            'movie-search-bar':movieSearchBar
+            'movieSearchBar':movieSearchBar
         },
         methods:{
             goToDetails:function(x){
@@ -51,7 +54,7 @@
 </script>
 
 <style>
-    .movieList{
+    .movieListBox{
         height: calc(100% - 40px);
     }
     .movie_3d{
