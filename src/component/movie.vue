@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="movieList">
         <movie-search-bar></movie-search-bar>
-        <div v-for="x in movielist" class="clearFloat movie_box">
+        <div v-for="x in movielist" class="movie_box">
             <div class="movie_post">
                 <img :src="x.img" alt="">
             </div>
@@ -22,8 +22,8 @@
 
 <script>
     import axios from 'axios';
-    import movieSearchBar from '../../component/bar/movieSearchBar.vue';
-    import style from '../../css/common.css';
+    import movieSearchBar from './movieSearchBar.vue';
+    import style from '../css/common.css';
 
     export default {
         data () {
@@ -51,6 +51,9 @@
 </script>
 
 <style>
+    .movieList{
+        height: calc(100% - 40px);
+    }
     .movie_3d{
         background: #b4ccc4;
         color: #ffffff;

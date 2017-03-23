@@ -14,7 +14,7 @@
 
 <script>
     import axios from 'axios';
-    import cinemaSearchBar from '../../component/bar/cinemaSearchBar.vue';
+    import cinemaSearchBar from './cinemaSearchBar.vue';
 
     export default {
         data () {

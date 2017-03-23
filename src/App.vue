@@ -3,25 +3,18 @@
 </template>
 
 <script>
-export default {
-  name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+  import style from './css/common.css';
+
+  export default {
+    name: 'app',
+    data () {
+      return {
+        msg: 'Welcome to Your Vue.js App'
+      }
     }
   }
-}
 </script>
 
 <style>
-  html,body{
-    margin: 0;
-    padding: 0;
-  }
-  .active{
-    color: #91d6ff;
-  }
-  .text-center{
-    text-align: left;
-  }
+
 </style>

@@ -18,7 +18,7 @@
 
 <script>
     import axios from 'axios';
-    import shareBar from '../../component/bar/shareBar.vue'
+    import shareBar from './shareBar.vue'
 
     export default {
         data:function () {
