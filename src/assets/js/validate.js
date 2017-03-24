@@ -7,5 +7,7 @@ class Validata {
         this.name = name;
     }
 
-    trim(){}
+    trim(){
+
+    }
 }
