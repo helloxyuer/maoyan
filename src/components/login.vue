@@ -11,16 +11,20 @@
             <span>邮箱:</span>
             <input type="text" v-model="password" maxlength="11">
         </div>
-        <div v-if="showTips" class="text-center">{{tips}}</div>
-        <div class="loginBtn" @click="telLogin">登录</div>
+        <div class="text-tips">{{tips}}</div>
+        <div class="btnBox">
+            <div class="loginBtn" @click="telLogin">登录</div>
+            <div class="registerBtn" @click="telRegister">去注册</div>
+        </div>
     </div>
 </template>
 
 <script>
     import style from '../assets/css/common.css';
+    import common from '../assets/js/common'
 
     export default {
-        data:function () {
+        data () {
             return{
                 loginTel:'',
                 password:'',
@@ -28,11 +32,30 @@
             }
         },
         methods: {
-            telLogin: function () {
-                if(this.loginTel=='11'&&this.password=="22"){
-                    this.$router.replace('/main')
+            telLogin() {
+                const mydate = common.getMyData();
+                if(this.loginTel in mydate){
+                    if(mydate[this.loginTel]==this.password){
+                        this.tips = '登陆中...';
+                        this.$router.replace('/main')
+                    }else{
+                        this.tips = '密码错误!'
+                    }
                 }else{
-                    this.tips='账号11,密码22';
+                    this.tips = '账号未注册';
+                }
+            },
+            telRegister(){
+                const mydate = common.getMyData();
+                if(this.loginTel in mydate){
+                    this.tips = this.loginTel+'已被注册!';
+                }else{
+                    mydate[this.loginTel] = this.password;
+                    this.tips = this.loginTel+'注册成功,跳转中..';
+                    let thisRouter = this.$router;
+                    setTimeout(function () {
+                        thisRouter.replace('/main');
+                    },200)
                 }
             }
         },
@@ -47,13 +70,31 @@
 </script>
 
 <style>
+    .text-center{
+        text-align: center;
+        margin: 0 auto;
+    }
+
     .login-header{
         height: 200px;
     }
-    .text-center{
+    .text-tips{
         text-align: center;
+        height: 40px;
+        line-height: 40px;
+        font-size: 14px;
+    }
+    .btnBox{
+        display: flex;
     }
     .loginBtn{
+        flex: 1;
+        width: 100px;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .registerBtn{
+        flex: 1;
         width: 100px;
         text-align: center;
         margin: 0 auto;
