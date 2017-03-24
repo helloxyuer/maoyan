@@ -1,13 +1,14 @@
 <template>
-    <div>
-        <cinema-bar v-on:keyword="getKeyword"></cinema-bar>
-        <div></div>
-        <div v-for="(val,key) of cinemalistfiflter">
-            <div class="cinemaZone">{{key}}</div>
-            <router-link class="cinemaList" v-for="(item, index) of val" :to="{name:'cinemaDetails',params:{cinemaid:item.id}}" tag="div">
-                <span class="cinemaIndex">{{index}}</span>
-                <span class="cinemaName">{{item.nm}}</span>
-            </router-link>
+    <div class="cinemaHeight">
+        <cinemaSearchBar v-on:keyword="getKeyword"></cinemaSearchBar>
+        <div class="cinemaBoxList">
+            <div v-for="(val,key) of cinemalistfiflter" :key="key">
+                <div class="cinemaZone">{{key}}</div>
+                <router-link class="cinemaList" v-for="(item, index) of val" :key="item.id" :to="{name:'cinemaDetails',params:{cinemaid:item.id}}" tag="div">
+                    <span class="cinemaIndex">{{index}}</span>
+                    <span class="cinemaName">{{item.nm}}</span>
+                </router-link>
+            </div>
         </div>
     </div>
 </template>
@@ -29,7 +30,7 @@
             })
         },
         components:{
-            'cinema-bar':cinemaSearchBar
+            'cinemaSearchBar':cinemaSearchBar
         },
         methods:{
             getKeyword:function(x){
@@ -57,6 +58,14 @@
 </script>
 
 <style>
+    .cinemaHeight{
+        height:calc(100% - 40px);
+        overflow: auto;
+    }
+    .cinemaBoxList{
+        height:calc(100% - 40px);
+        overflow: auto;
+    }
     .cinemaZone{
         height: 40px;
         line-height: 40px;

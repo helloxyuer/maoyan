@@ -1,5 +1,5 @@
 <template>
-    <div class="nav">
+    <div class="nav bottomBarHeight">
         <router-link to="movie" tag="span">电影</router-link>
         <router-link to="cinema" tag="span">影院</router-link>
         <router-link to="find" tag="span">发现</router-link>
@@ -8,7 +8,7 @@
 </template>
 
 <script>
-    import style from '../css/common.css';
+    import style from '../assets/css/common.css';
 
     export default {
         data:function () {
@@ -23,11 +23,7 @@
     .nav{
         width: 100%;
         background: #20A0FF;
-        border-bottom:1px solid #20A0FF;
-        border-top: 1px solid #ccc;
         display:flex;
-        height: 40px;
-        line-height: 40px;
     }
     .nav span{
         flex: 1;

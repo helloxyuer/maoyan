@@ -1,5 +1,5 @@
 <template>
-    <div class="movieList">
+    <div class="movieListBox">
         <movieSearchBar></movieSearchBar>
         <div class="movieListBox">
             <div v-for="x in movielist" class="movie_box clearFloat">
@@ -19,14 +19,13 @@
                 </div>
             </div>
         </div>
-
     </div>
 </template>
 
 <script>
     import axios from 'axios';
     import movieSearchBar from './movieSearchBar.vue';
-    import style from '../css/common.css';
+    import style from '../assets/css/common.css';
 
     export default {
         data () {
@@ -56,6 +55,7 @@
 <style>
     .movieListBox{
         height: calc(100% - 40px);
+        overflow: auto;
     }
     .movie_3d{
         background: #b4ccc4;

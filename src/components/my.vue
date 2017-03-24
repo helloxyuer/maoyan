@@ -1,5 +1,5 @@
 <template>
-    <div>my</div>
+    <div class="mybox">my</div>
 </template>
 
 <script>
@@ -11,3 +11,10 @@
         }
     }
 </script>
+
+<style>
+    .mybox{
+        height:calc(100% - 40px);
+        overflow: auto;
+    }
+</style>

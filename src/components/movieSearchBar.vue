@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="shareBar height40px">
+        <div class="shareBar headBarHeight">
             <div class="shareBar-center-box">
                 <span>热映</span>
                 <span>待映</span>
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-    import style from '../css/common.css';
+    import style from '../assets/css/common.css';
 
     export default {
         data:function () {
@@ -36,7 +36,6 @@
 
 <style>
     .shareBar{
-        position: fixed;
         width: 100%;
         background: #20A0FF;
     }

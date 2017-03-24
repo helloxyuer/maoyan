@@ -17,7 +17,7 @@
 </template>
 
 <script>
-    import style from '../css/common.css';
+    import style from '../assets/css/common.css';
 
     export default {
         data:function () {

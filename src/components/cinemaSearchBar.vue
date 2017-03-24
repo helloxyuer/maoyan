@@ -1,15 +1,11 @@
 <template>
-    <div>
-        <div class="cinemaBar height40px">
-            <input class="searchInput" type="text" v-model="keyword" v-on:input="sendChange">
-        </div>
-        <div class="height40px"></div>
+    <div class="cinemaBar headBarHeight">
+        <input class="searchInput" type="text" v-model="keyword" v-on:input="sendChange">
     </div>
-
 </template>
 
 <script>
-    import style from '../css/common.css';
+    import style from '../assets/css/common.css';
     export default {
         data:function () {
             return{
@@ -31,7 +27,6 @@
 
 <style>
     .cinemaBar{
-        position: fixed;
         width: 100%;
         background: #20A0FF;
         text-align: center;

@@ -3,11 +3,15 @@ html,body{
     padding: 0;
     height: 100%;
 }
-.active{
+
+:global(.active){
     color: #91d6ff;
 }
-
-:global(.height40px){
+:global(.headBarHeight){
+    height: 40px;
+    line-height: 40px;
+}
+:global(.bottomBarHeight){
     height: 40px;
     line-height: 40px;
 }
