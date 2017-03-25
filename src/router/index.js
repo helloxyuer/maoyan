@@ -1,16 +1,16 @@
-import login from '../components/login.vue'
-import main from '../components/main.vue'
-import cinema from '../components/cinema.vue'
-import find from '../components/find.vue'
-import my from '../components/my.vue'
-import movie from '../components/movie.vue'
-import Weather from '../components/weather.vue'
-import Jocker from '../components/jocker.vue'
-import Today from '../components/today.vue'
-import details from '../components/details.vue'
-import cinemadetails from '../components/cinemadetails.vue'
+import login from '@/components/login'
+import main from '@/components/main'
+import cinema from '@/components/cinema'
+import find from '@/components/find'
+import my from '@/components/my'
+import movie from '@/components/movie'
+import Weather from '@/components/weather'
+import Jocker from '@/components/jocker'
+import Today from '@/components/today'
+import details from '@/components/details'
+import cinemadetails from '@/components/cinemadetails'
 
-module.exports = {
+export default {
     routes: [{
         path: '/',
         redirect: '/login'
