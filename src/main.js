@@ -9,46 +9,42 @@ Vue.use(Vuex)
 
 const router = new VueRouter(RouterMap);
 const store = new Vuex.Store({
-  state:{
-    list:[
+  state: {
+    list: [
       {
-        name:'AA',
-        age:23,
+        name: 'AA',
+        age: 23,
       },
-       {
-        name:'BB',
-        age:32,
+      {
+        name: 'BB',
+        age: 32,
       },
-       {
-        name:'钱傻',
-        age:14,
+      {
+        name: '钱傻',
+        age: 14,
       },
-       {
-        name:'王老',
-        age:54,
+      {
+        name: '王老',
+        age: 54,
       },
-       {
-        name:'冬菜',
-        age:33,
+      {
+        name: '冬菜',
+        age: 33,
       },
-       {
-        name:'梦圆',
-        age:23,
+      {
+        name: '梦圆',
+        age: 23,
       }
     ],
-    count:0
+    count: 0
   },
-  getters:{
-    onlyNum:function (state) {
-      
+  getters: {
+    onlyNum: function (state) {
+
     }
   },
-  mutations:{
-
-  },
-  actions:{
-
-  }
+  mutations: {},
+  actions: {}
 })
 
 new Vue({

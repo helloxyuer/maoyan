@@ -1,14 +1,12 @@
 <template>
-    <div>今日</div>
+  <div>今日</div>
 </template>
 <script>
-    export default {
-        data:function () {
-            return {
-
-            }
-        }
+  export default {
+    data: function () {
+      return {}
     }
+  }
 </script>
 <style>
 

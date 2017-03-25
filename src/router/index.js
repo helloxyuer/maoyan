@@ -11,52 +11,52 @@ import details from '@/components/details'
 import cinemadetails from '@/components/cinemadetails'
 
 export default {
-    routes: [{
+  routes: [{
+    path: '/',
+    redirect: '/login'
+  }, {
+    path: '/main',
+    redirect: '/main/movie'
+  }, {
+    path: '/login',
+    component: login
+  }, {
+    path: '/main',
+    component: main,
+    children: [{
+      path: 'movie',
+      component: movie,
+      beforeEnter: (to, from, next) => {
+        console.log('12');
+        next();
+      }
+    }, {
+      path: 'cinema',
+      component: cinema,
+    }, {
+      path: 'find',
+      component: find,
+      children: [{
         path: '/',
-        redirect: '/login'
-    },{
-        path: '/main',
-        redirect: '/main/movie'
-    },{
-        path: '/login',
-        component: login
-    },{
-        path:'/main',
-        component:main,
-        children:[{
-            path:'movie',
-            component:movie,
-            beforeEnter: (to, from, next) => {
-                console.log('12');
-                next();
-            }
-        },{
-            path:'cinema',
-            component:cinema,
-        },{
-            path:'find',
-            component:find,
-            children:[{
-                path: '/',
-                components: {
-                    default:Weather,
-                    today:Today,
-                    jocker:Jocker
-                }
-            }]
-        },{
-            path:'my',
-            component:my,
-        }]
-    },{
-        path: '/moveDetails/:movieid',
-        name:'movieDetails',
-        component: details
-    },{
-        path: '/cinemaDetails/:cinemaid',
-        name:'cinemaDetails',
-        component: cinemadetails
+        components: {
+          default: Weather,
+          today: Today,
+          jocker: Jocker
+        }
+      }]
+    }, {
+      path: 'my',
+      component: my,
+    }]
+  }, {
+    path: '/moveDetails/:movieid',
+    name: 'movieDetails',
+    component: details
+  }, {
+    path: '/cinemaDetails/:cinemaid',
+    name: 'cinemaDetails',
+    component: cinemadetails
 
-    }],
-    linkActiveClass: 'active'
+  }],
+  linkActiveClass: 'active'
 }

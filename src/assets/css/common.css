@@ -1,31 +1,35 @@
-html,body{
-    margin: 0;
-    padding: 0;
-    height: 100%;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
-:global(.active){
-    color: #91d6ff;
+:global(.active) {
+  color: #91d6ff;
 }
-:global(.headBarHeight){
-    height: 40px;
-    line-height: 40px;
+
+:global(.headBarHeight) {
+  height: 40px;
+  line-height: 40px;
 }
-:global(.bottomBarHeight){
-    height: 40px;
-    line-height: 40px;
+
+:global(.bottomBarHeight) {
+  height: 40px;
+  line-height: 40px;
 }
-:global(.searchInput){
-    height: 20px;
-    line-height: 20px;
-    margin-top: 10px;
-    width: 200px;
-    border: 0;
-    border-radius: 5px;
-    text-indent: 5px;
+
+:global(.searchInput) {
+  height: 20px;
+  line-height: 20px;
+  margin-top: 10px;
+  width: 200px;
+  border: 0;
+  border-radius: 5px;
+  text-indent: 5px;
 }
-:global(.clearFloat:after){
-    display: block;
-    content: '';
-    clear: both;;
+
+:global(.clearFloat:after) {
+  display: block;
+  content: '';
+  clear: both;;
 }

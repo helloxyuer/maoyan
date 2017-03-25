@@ -1,14 +1,12 @@
 <template>
-    <div>天气</div>
+  <div>天气</div>
 </template>
 <script>
-    export default {
-        data:function () {
-            return {
-
-            }
-        }
+  export default {
+    data: function () {
+      return {}
     }
+  }
 </script>
 <style>
 
