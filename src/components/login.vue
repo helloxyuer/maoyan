@@ -21,7 +21,8 @@
 
 <script>
     import style from '../assets/css/common.css';
-    import common from '../assets/js/common'
+    import common from '../assets/js/common';
+    import validate from  '../assets/js/validate';
 
     export default {
         data () {
@@ -34,8 +35,16 @@
         methods: {
             telLogin() {
                 const mydate = common.getMyData();
+                const vali = new validate({
+                  tel:this.loginTel,
+                  pwd:this.password
+                }).rightTel();
+                if(!vali.state){
+                  this.tips = vali.message;
+                  return;
+                }
                 if(this.loginTel in mydate){
-                    if(mydate[this.loginTel]==this.password){
+                    if(mydate[this.loginTel]===this.password){
                         this.tips = '登陆中...';
                         this.$router.replace('/main')
                     }else{

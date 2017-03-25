@@ -11,7 +11,10 @@ export default{
     saveMyDta(data){
         data = JSON.stringify(data);
         localStorage.setItem('userList');
+    },
+
+    trim(data){
+      let thisdata = data||'';
+      return thisdata.replace(/(^\s*)|(\s*$)/g, "");
     }
-
-
 }
